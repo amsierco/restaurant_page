@@ -1,0 +1,130 @@
+:root {
+    --normal-font: 1rem;
+    --large-font: 2rem;
+    --padding: clamp(10px, 1rem, 1rem);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body {
+    background-image: url("../src/images/background.jpg");
+    background-position: 50%;
+    background-size: contain;
+}
+
+div#content{
+    display: grid;
+    grid-template-rows: 10% 85% 5%;
+    min-height: 100vh;
+}
+
+/*HEADER*/
+.header {
+    background: transparent;
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    padding: var(--padding);
+}
+
+.header img {
+    width: clamp(2rem, 4rem, 5rem);
+    border: 2px solid #000;
+    border-radius: 90%;
+    scale: 85%;
+}
+
+.header button {
+    border: 2px solid #000;
+    border-radius: 3rem;
+    height: clamp(40px, 3rem, 80%);
+    align-self: center;
+    margin-right: clamp(5px, 1rem, 2rem);
+    max-width: 180px;
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.3);
+}
+
+/*FOOTER*/
+.footer {
+    justify-self: bottom;
+    margin: 0;
+    background: rgba(100,100,100,1);
+    padding: var(--padding);
+}
+
+.footer > div {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: var(--normal-font);
+}
+
+/*MAIN PAGE*/
+.main-page {
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background: transparent;
+    padding: var(--padding);
+    gap: clamp(1rem, 5px, 2rem);
+}
+
+.hours,
+.location {
+    grid-row: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hours > div,
+.location > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 5px, 2rem);
+    padding: 2rem;
+    font-size: var(--normal-font);
+    border: 3px solid black;
+    border-radius: 20px; 
+}
+
+.main-page > div > div > #title {
+    font-size: var(--large-font);
+    font-weight: 600;
+}
+
+.main-page > div > #splash {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100%;
+    font-size: var(--normal-font);
+    font-weight: 400;
+}
+
+.main-page > .store-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-page > div > img{
+    width: clamp(300px, 90%, 100%);
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+@media(max-width: 700px){
+    .main-page{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+}
