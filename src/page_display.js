@@ -16,7 +16,12 @@ const createHeader = (() => {
     contact.id ='contact-button';
     contact.textContent = 'Contact';
 
+    const home = document.createElement('button');
+    home.id ='home-button';
+    home.textContent = 'Home';
+
     header.appendChild(logo);
+    header.appendChild(home);
     header.appendChild(menu);
     header.appendChild(contact);
 
@@ -26,6 +31,7 @@ const createHeader = (() => {
 const createHomePage = (() => {
     const body = document.createElement('div');
     body.className = 'main-page';
+    body.id = 'viewable';
 
     const image = document.createElement('div');
     image.className = 'store-image';
@@ -33,10 +39,13 @@ const createHomePage = (() => {
          `<img src="../src/images/splash.jpg" alt="Store image">` ;
 
     const splashText = document.createElement('div');
+    //const scard = document.createElement('div');
+    //scard.id = 'splash';
     splashText.innerHTML = 
         `<text id='splash'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
         </text>`;
+   // splashText.appendChild(scard);
 
     const hours = document.createElement('div');
     hours.className = 'hours';
@@ -80,7 +89,11 @@ const createFooter = (() => {
     footer.className = 'footer';
 
     const author = document.createElement('div');
-    author.textContent = `Copyright © 2023 amsierco`;
+    author.innerHTML = 
+        `Copyright © 2023 amsierco 
+        <a href='https://github.com/amsierco/restaurant_page'>
+        <i class="fa fa-github")" id='github'></i>
+        </a>`;
 
     footer.appendChild(author);
 
@@ -89,10 +102,15 @@ const createFooter = (() => {
 
 const createPage = (() => {
     const body = document.querySelector('div#content');
-    body.style.border = '3px solid black';
 
-    body.appendChild(createHeader.header);
-    body.appendChild(createHomePage.body);
+    const header = createHeader.header;
+    const home = createHomePage.body;
+    const footer =createFooter.footer;
 
-    body.appendChild(createFooter.footer);
+    body.appendChild(header);
+    body.appendChild(home);
+
+    body.appendChild(footer);
+
+    return {header, home, footer};
 })(); 
