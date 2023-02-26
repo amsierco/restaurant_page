@@ -4,9 +4,11 @@ const createHeader = (() => {
     const header = document.createElement('div');
     header.className = 'header';
 
-    const logo = document.createElement('img');
-    logo.src = '../src/images/logo.jpg';
-    logo.alt = 'Store logo';
+    const logo = document.createElement('div');
+    logo.className = 'store_name'
+    logo.innerHTML = 
+        `<img src='../src/images/logo.jpg' alt='Store logo'>
+        <text>Flap Jack Shack</text>`;
 
     const menu = document.createElement('button');
     menu.id = 'menu-button';
@@ -77,7 +79,8 @@ const createHomePage = (() => {
 })();
 
 const createMenuPage = (() => {
-
+    const menu = document.createElement('div');
+    menu.className = 'menu';
 })();
 
 const createContactPage = (() => {

@@ -27,11 +27,21 @@ body > div#content{
     padding: var(--padding);
 }
 
-.header img {
+.header > div > img {
     width: clamp(2rem, 4rem, 5rem);
     border: 2px solid #000;
     border-radius: 90%;
     scale: 85%;
+}
+
+.header .store_name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    font-weight: 1000;
+    font-size: 2rem;
 }
 
 .header button {
